@@ -1,19 +1,24 @@
 import React from 'react'
+import { navLists } from '..'
 
 const Navbar = () => {
   return (
-    <header>
-        <nav className='flex items-center justify-between p-6 lg:px-8'>
-            <h1 className='text-2xl text-orange-300'>adella.cakesandevents</h1>
+    <header className='w-full py-5 sm:px-10 px-5 flex justify-between items-center'>
+        <nav className='flex w-full screen-max-width'>
             
-            <div class="hidden lg:flex lg:gap-x-12">
-                <a href="#" class="text-sm/6 font-semibold text-gray-900">Product</a>
-                <a href="#" class="text-sm/6 font-semibold text-gray-900">Features</a>
-                <a href="#" class="text-sm/6 font-semibold text-gray-900">Marketplace</a>
-                <a href="#" class="text-sm/6 font-semibold text-gray-900">Company</a>
+            <div className="flex flex-1 justify-start">
+              <h1 className='text-2xl text-orange-300'>adella.cakesandevents</h1>
+            </div>
+            
+            <div className="flex flex-1 items-center justify-center gap-x-5 max-sm:hidden">
+              {navLists.map((nav) => (
+                <div key={nav} className="px-5 text-sm cursor-pointer hover:font-semibold transition-all">
+                  {nav}
+                </div>
+              ))}               
             </div>
 
-            <div class="lg:flex lg:flex-1 lg:justify-end">
+            <div className="flex flex-1 justify-end">
                 <a href="#" class="text-sm/6 font-semibold text-gray-900">Contact us <span aria-hidden="true">&rarr;</span></a>
             </div>
         </nav>
